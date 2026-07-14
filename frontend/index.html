@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RevNest | Intelligent Pricing for Modern Hosts</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Source+Serif+4:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+</head>
+<body>
+
+    <!-- Video Background -->
+    <video autoplay muted loop playsinline class="fixed inset-0 w-full h-full object-cover z-0">
+        <source src="assets/videos/background.mp4" type="video/mp4">
+        <!-- Fallback: if video fails -->
+        <div class="absolute inset-0 bg-black"></div>
+    </video>
+
+    <!-- Overlay -->
+    <div class="fixed inset-0 bg-black/40 z-1"></div>
+
+    <!-- Main Content -->
+    <main class="relative z-10 min-h-screen p-6">
+        <div class="liquid-glass-strong max-w-7xl mx-auto w-full h-full min-h-[95vh] rounded-3xl p-6 md:p-8 flex flex-col">
+
+            <!-- Navigation -->
+            <nav class="flex justify-between items-center mb-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center">
+                        <img src="assets/images/logo.svg" alt="RevNest Logo" class="w-6 h-6">
+                    </div>
+                    <div>
+                        <span class="text-2xl font-semibold tracking-tighter">RevNest</span>
+                        <p class="text-[10px] text-white/40 tracking-widest">INTELLIGENT PRICING</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button class="liquid-glass px-4 py-2 rounded-full flex items-center gap-2 text-sm hover:scale-105 transition-all">
+                        <i data-lucide="menu" class="w-4 h-4"></i> Menu
+                    </button>
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <div class="flex-1 grid lg:grid-cols-2 gap-8 items-start">
+
+                <!-- Left Panel: Hero -->
+                <section class="space-y-6">
+                    <div class="space-y-4">
+                        <div class="inline-block liquid-glass px-4 py-1.5 rounded-full text-xs tracking-widest text-white/50">
+                            AI-POWERED PRICE PREDICTION
+                        </div>
+                        <h1 class="text-5xl md:text-6xl lg:text-7xl tracking-[-0.05em] leading-[1.1] font-light">
+                            Maximize your <br>
+                            <span class="font-serif text-white/80 italic">nest's revenue.</span>
+                        </h1>
+                        <p class="text-base md:text-lg text-white/50 max-w-md leading-relaxed">
+                            AI-powered price prediction for Airbnb hosts. Know what your property is worth, instantly.
+                        </p>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-wrap gap-4">
+                        <button onclick="scrollToPredictor()" class="liquid-glass-strong px-8 py-4 rounded-full flex items-center gap-4 group hover:scale-105 transition-all">
+                            Predict Price <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                        <button class="liquid-glass px-6 py-4 rounded-full flex items-center gap-2 text-sm hover:scale-105 transition-all">
+                            <i data-lucide="info" class="w-4 h-4"></i> How it works
+                        </button>
+                    </div>
+
+                    <!-- Feature Tags -->
+                    <div class="flex flex-wrap gap-2">
+                        <span class="liquid-glass px-4 py-2 rounded-full text-xs text-white/60">Artistic Gallery</span>
+                        <span class="liquid-glass px-4 py-2 rounded-full text-xs text-white/60">AI Generation</span>
+                        <span class="liquid-glass px-4 py-2 rounded-full text-xs text-white/60">3D Structures</span>
+                    </div>
+
+                    <!-- Footer Quote -->
+                    <div class="pt-8 border-t border-white/5">
+                        <p class="text-xs tracking-widest uppercase text-white/30 mb-2">Visionary Design</p>
+                        <p class="text-sm font-light italic">"We imagined a <span class="font-serif">realm with no ending.</span>"</p>
+                        <p class="text-[10px] text-white/40 mt-1">— MARCUS AURELIO —</p>
+                        <p class="text-[10px] text-white/20 mt-4 tracking-widest">
+                            Built by <span class="text-white/40">Mithil G</span> · IIT Kanpur
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Right Panel: Prediction Form -->
+                <section id="predictor" class="liquid-glass-strong rounded-3xl p-6 md:p-8 space-y-6">
+                    <div>
+                        <h2 class="text-xl font-semibold flex items-center gap-2">
+                            <i data-lucide="wand-2" class="w-5 h-5 text-white/60"></i>
+                            Predict Your Price
+                        </h2>
+                        <p class="text-sm text-white/40">Enter your property details below</p>
+                    </div>
+
+                    <form id="predictionForm" class="space-y-4">
+                        <!-- Neighbourhood -->
+                        <div>
+                            <label class="text-xs text-white/40 block mb-1.5">Neighbourhood</label>
+                            <select name="neighbourhood" class="glass-input w-full px-4 py-3 rounded-xl text-sm">
+                                <option value="Downtown">Downtown</option>
+                                <option value="Uptown">Uptown</option>
+                                <option value="Midtown">Midtown</option>
+                                <option value="Suburbs">Suburbs</option>
+                                <option value="Riverside">Riverside</option>
+                            </select>
+                        </div>
+
+                        <!-- Room Type -->
+                        <div>
+                            <label class="text-xs text-white/40 block mb-1.5">Room Type</label>
+                            <select name="room_type" class="glass-input w-full px-4 py-3 rounded-xl text-sm">
+                                <option value="Entire home/apt">Entire home/apt</option>
+                                <option value="Private room">Private room</option>
+                                <option value="Shared room">Shared room</option>
+                            </select>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <!-- Minimum Nights -->
+                            <div>
+                                <label class="text-xs text-white/40 block mb-1.5">Min Nights</label>
+                                <input type="number" name="minimum_nights" value="3" min="1" max="30" class="glass-input w-full px-4 py-3 rounded-xl text-sm">
+                            </div>
+                            <!-- Reviews -->
+                            <div>
+                                <label class="text-xs text-white/40 block mb-1.5">Reviews</label>
+                                <input type="number" name="number_of_reviews" value="45" min="0" class="glass-input w-full px-4 py-3 rounded-xl text-sm">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <!-- Reviews per month -->
+                            <div>
+                                <label class="text-xs text-white/40 block mb-1.5">Reviews / Month</label>
+                                <input type="number" name="reviews_per_month" value="1.5" step="0.1" min="0" class="glass-input w-full px-4 py-3 rounded-xl text-sm">
+                            </div>
+                            <!-- Host Listings -->
+                            <div>
+                                <label class="text-xs text-white/40 block mb-1.5">Host Listings</label>
+                                <input type="number" name="calculated_host_listings_count" value="2" min="1" class="glass-input w-full px-4 py-3 rounded-xl text-sm">
+                            </div>
+                        </div>
+
+                        <!-- Availability -->
+                        <div>
+                            <label class="text-xs text-white/40 block mb-1.5">Availability (days/year)</label>
+                            <input type="number" name="availability_365" value="200" min="0" max="365" class="glass-input w-full px-4 py-3 rounded-xl text-sm">
+                        </div>
+
+                        <button type="submit" id="predictBtn" class="w-full liquid-glass-strong py-4 rounded-2xl flex items-center justify-center gap-3 hover:scale-[1.02] transition-all text-sm font-medium">
+                            <i data-lucide="sparkles" class="w-4 h-4"></i>
+                            <span>Predict Price</span>
+                        </button>
+                    </form>
+
+                    <!-- Result Container -->
+                    <div id="resultContainer" class="hidden liquid-glass p-4 rounded-2xl border border-white/5 space-y-2 result-enter">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-white/40">Predicted Price</span>
+                            <span class="text-xs text-white/40">Price Range</span>
+                        </div>
+                        <div class="flex justify-between items-end">
+                            <span id="predictedPrice" class="text-3xl font-semibold text-white">$0.00</span>
+                            <span id="priceRange" class="text-sm text-white/60 px-3 py-1 rounded-full bg-white/5">Standard</span>
+                        </div>
+                        <div id="errorMessage" class="text-xs text-red-400 hidden"></div>
+                    </div>
+
+                    <!-- Loading State -->
+                    <div id="loadingState" class="hidden flex items-center justify-center gap-3 py-4">
+                        <div class="spinner"></div>
+                        <span class="text-sm text-white/40">Analyzing property data...</span>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Custom JS -->
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+# Create .gitignore
+echo __pycache__/ >> .gitignore
+echo *.pyc >> .gitignore
+echo *.pyo >> .gitignore
+echo .env >> .gitignore
+echo venv/ >> .gitignore
+echo .venv/ >> .gitignore
+echo *.log >> .gitignore
+echo .DS_Store >> .gitignore
+echo .vscode/ >> .gitignore
+echo .idea/ >> .gitignore
+echo data/ >> .gitignore
+echo *.pkl >> .gitignore
+echo *.joblib >> .gitignore

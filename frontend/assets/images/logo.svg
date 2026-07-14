@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+    <!-- Nest shape -->
+    <path d="M30 70 L15 45 L25 30 L40 25 L60 25 L75 30 L85 45 L70 70 L50 78 L30 70Z"
+          fill="none" stroke="white" stroke-width="2" opacity="0.8"/>
+
+    <!-- Upward arrow (Revenue) -->
+    <path d="M40 60 L50 40 L60 60"
+          fill="none" stroke="#F4A460" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Arrow tip -->
+    <path d="M50 40 L45 48 L55 48 Z"
+          fill="#F4A460"/>
+
+    <!-- Leaf accents -->
+    <path d="M25 45 C20 35, 30 30, 35 38"
+          fill="none" stroke="#2D6A4F" stroke-width="2" opacity="0.6"/>
+    <path d="M75 45 C80 35, 70 30, 65 38"
+          fill="none" stroke="#2D6A4F" stroke-width="2" opacity="0.6"/>
+</svg>
