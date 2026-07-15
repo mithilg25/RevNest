@@ -1,22 +1,3 @@
-// ============================================
-// RevNest - Frontend JavaScript
-// ============================================
-
-// ---------- Initialize Lucide Icons ----------
-document.addEventListener('DOMContentLoaded', function() {
-    if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-    }
-});
-
-// ---------- Scroll to Predictor ----------
-function scrollToPredictor() {
-    const predictor = document.getElementById('predictor');
-    if (predictor) {
-        predictor.scrollIntoView({ behavior: 'smooth' });
-    }
-}
-
 // ---------- Prediction Form Handler ----------
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('predictionForm');
@@ -52,8 +33,8 @@ document.addEventListener('DOMContentLoaded', function() {
         predictBtn.querySelector('span').textContent = 'Predicting...';
 
         try {
-            // API URL - change this when deploying
-            const API_URL = 'http://localhost:8000/predict';
+            // ✅ FIXED: Use live Render backend
+            const API_URL = 'https://revnest-5vik.onrender.com/predict';
 
             const response = await fetch(API_URL, {
                 method: 'POST',
@@ -83,12 +64,3 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-
-// ---------- Utility: Get API URL from environment ----------
-function getApiUrl() {
-    // In production, use environment variable or window._env_
-    if (window._env_ && window._env_.API_URL) {
-        return window._env_.API_URL;
-    }
-    return 'http://localhost:8000/predict';
-}
