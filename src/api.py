@@ -32,7 +32,7 @@ class PropertyFeatures(BaseModel):
     number_of_reviews: int = Field(..., ge=0, description="Total number of reviews")
     reviews_per_month: float = Field(..., ge=0, description="Average reviews per month")
     calculated_host_listing_count: int = Field(..., ge=1, description="Number of listings by the host")
-    availability_365: int = Field(..., ge=0, le=365, description="Available days in a year")
+    availibility_365: int = Field(..., ge=0, le=365, description="Available days in a year")
 
 class PredictionResponse(BaseModel):
     predicted_price: float
